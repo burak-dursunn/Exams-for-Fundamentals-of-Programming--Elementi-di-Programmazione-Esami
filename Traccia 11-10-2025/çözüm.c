@@ -11,6 +11,7 @@ struct Mystruct {
 int delete_rows(int matrix[][NMAX], int r, int c);
 void write_struct(structcuk myStruct[], int c);
 void read_struct();
+int read_input(); //? returns column and row information
 
 
 
@@ -69,6 +70,7 @@ int main() {
 
     write_struct(myStruct, c);
     read_struct();
+    read_input();
 
 }
 
