@@ -53,6 +53,8 @@ int main() {
     
 
     //! Sıralama algoritması - Greater to Smaller
+    //! Eğer sınavda istenirse Bubble sort algoritması da kullanılabilir.
+    //? for(y=0; y<r-i-1;y++) kod satırı ile sağlanabilir.
     int x,y;
     structcuk temp;
     for(x = 0; x<c; x++) {
