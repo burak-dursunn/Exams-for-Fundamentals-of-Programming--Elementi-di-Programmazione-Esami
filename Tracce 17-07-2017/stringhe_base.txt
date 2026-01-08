@@ -1,0 +1,92 @@
+//1° Esercizio:Dichiarazione e stampa semplice di una stringa
+
+#include <stdio.h>
+
+int main() {
+
+	char s[20] = "macchina";
+
+	printf("La stringa vale: %s\n", s);
+    printf("La stringa vale: %c\n", s[1]); //singolo carattere	
+
+	return 0;
+}
+
+//2° Esercizio: Lettura con scanf (senza spazi)
+#include <stdio.h>
+
+int main() {
+    // Array di char che conterra' una parola senza spazi
+    char s[20];
+
+    printf("Inserisci una parola (senza spazi): ");
+
+    // scanf con %s legge caratteri fino al primo spazio o newline
+    scanf("%s", s);  
+
+    printf("Hai inserito: %s\n", s);
+
+    return 0;
+}
+
+//3° Esercizio://Lettura con fgets (con spazi)
+#include <stdio.h>
+
+int main() {
+    
+    char s[50];// Array di char 
+
+    printf("Inserisci una frase (puo' contenere spazi): ");
+
+    // fgets legge al massimo 49 caratteri + '\0' dallo stdin (tastiera)
+    fgets(s, 50, stdin);
+
+    printf("La frase inserita e': %s\n", s);
+
+    return 0;
+}
+//4° Esercizio: CONTEGGIO LUNGHEZZA DI UNA STRINGA(esteso)
+#include <stdio.h>
+
+#define NMAX 50
+
+int main() {
+    char s[NMAX];
+    int len = 0;
+
+    printf("Inserisci una parola: ");
+    scanf("%s", s);
+
+    // Scansiono la stringa fino al terminatore '\0',
+    // controllando di non superare NMAX
+    while (len < NMAX && s[len] != '\0') {
+        len++;
+    }
+
+    if (len < NMAX) {
+        printf("La lunghezza della stringa e': %d\n", len);
+    } else {
+        printf("Fine stringa non trovata entro NMAX caratteri.\n");
+    }
+
+    return 0;
+}
+5°Esercizio: CONTEGGIO LUNGHEZZA DI UNA STRINGA(con funzione strlen)
+#include <stdio.h>
+#include <string.h>   // per strlen
+
+#define NMAX 50
+
+int main() {
+    char s[NMAX];
+
+    printf("Inserisci una parola: ");
+    scanf("%s", s);
+
+    // strlen conta i caratteri fino a '\0'
+    int len = strlen(s);
+
+    printf("La lunghezza della stringa e': %d\n", len);
+
+    return 0;
+}
