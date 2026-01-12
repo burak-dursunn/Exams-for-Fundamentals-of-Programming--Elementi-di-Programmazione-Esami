@@ -29,11 +29,11 @@ int main() {
         line_info[line].id = line + 1;
 
         while(myString[i] != '\0') {
-
+            //!word length
             if(myString[i] != ' ' && myString[i] != '\n') {
                 length++; // 2
             }
-
+            //!words
             if(myString[i] != ' ' && myString[i] != '\n'  && 
                 (myString[i+1] == ' ' || myString[i+1] == '\n' || myString[i+1] == '\0')) {
                 line_info[line].word_len[counter] = length;
