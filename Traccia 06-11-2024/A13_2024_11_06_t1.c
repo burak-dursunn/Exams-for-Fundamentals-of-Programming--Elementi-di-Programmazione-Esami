@@ -41,12 +41,11 @@ int main() {
         i = 0;
         // index = strcspn(temp,".!?");
         while(start[i] != '\0') {
-            if((start[i] != ' ' || start[i] != '\n' || start[i] != '\0' ||
-                start[i] != '.' || start[i] != '!'  || start[i] != '?')){
+            if((start[i] != '\n' && start[i] != '\0')){
                     chars++;
                 }
 
-            if(start[i] != ' ' && start[j] != '\n' 
+            if(start[i] != ' ' && start[i] != '\n' 
                 && start[i] != '.'  && start[i] != '!' && start[i] != '?'
                 && (start[i+1] == ' ' || start[i+1] == '\n' || start[i+1] == '\0' ||
                 start[i+1] == '.' || start[i+1] == '!' || start[i+1] == '?')) {
@@ -54,16 +53,19 @@ int main() {
                 }
 
            if((start[i+1] == '.' || start[i+1] == '!' || start[i+1] == '?')) {
-                sum_chars += chars;
-                sum_words += words;
-                struct1[id].id = id;
-                struct1[id].chars = chars;
-                struct1[id].words = words;
-                struct1[id].meanc = (float)sum_chars/id+1;
-                struct1[id].meanw = (float)sum_words/id+1;
 
-                words = chars = 0;
-                id++;
+            struct1[id].id = id;
+            struct1[id].chars = chars;
+            struct1[id].words = words;
+
+            sum_chars += chars;
+            sum_words += words;
+
+            struct1[id].meanc = (float)sum_chars/(id+1);
+            struct1[id].meanw = (float)sum_words/(id+1);
+
+            words = chars = 0;
+            id++;
             } 
 
             
@@ -83,8 +85,8 @@ void print_struct(info struct1[], int id) {
             printf("Sentence: %d\n", struct1[i].id);
             printf("Character: %d\n", struct1[i].chars);
             printf("Words: %d\n", struct1[i].words);
-            printf("Mean Character: %d\n", struct1[i].meanc);
-            printf("Mean Words: %d\n", struct1[i].meanw);
+            printf("Mean Character: %.2f\n", struct1[i].meanc);
+            printf("Mean Words: %.2f\n", struct1[i].meanw);
             printf("-------------------------------\n");
     }
 }
