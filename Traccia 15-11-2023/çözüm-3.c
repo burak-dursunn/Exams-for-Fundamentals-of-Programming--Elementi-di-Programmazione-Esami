@@ -92,13 +92,12 @@ void trim(char *s) {
         memmove(s, start, strlen(start) + 1);
 
     // Sondaki boşlukları sil
-    end = s + strlen(s) - 1;
-    while (end >= s && *end == ' ')
+    end = start + strlen(start) - 1;
+    while (end >= start && *end == ' ')
         end--;
 
     *(end + 1) = '\0';
 }
-
 
 void sort(belge bilgiler[], int n) {
     int i,j;

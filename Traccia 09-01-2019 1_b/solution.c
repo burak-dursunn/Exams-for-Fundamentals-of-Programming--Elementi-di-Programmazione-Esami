@@ -41,7 +41,7 @@ int main() {
                 }
             }
 
-            if(match){
+            if(match) {
                 duplicates[counter].length = column;
                 for(int j = 0; j<column; j++) {
                     duplicates[counter].row_elements[j] = matrix[k][j];

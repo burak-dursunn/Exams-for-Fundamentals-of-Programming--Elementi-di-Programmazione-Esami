@@ -66,7 +66,7 @@ int main() {
 
             words = chars = 0;
             id++;
-            } 
+            }
 
             
             i++;
